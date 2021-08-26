@@ -1,15 +1,18 @@
-const httpServer = require("http").createServer();
+const express = require("express");
+const app = express();
+app.use(express.static("../client/build"));
+const httpServer = require("http").createServer(app);
 const options = {
   /* ... */
   cors: {
-    origin: "http://localhost:3000",
+    origin: "*",
   },
 };
 const io = require("socket.io")(httpServer, options);
 
 const PORT = process.env.PORT || 5000;
 
-io.on("connection", async (socket) => {
+io.of("/meditation").on("connection", async (socket) => {
   //
   socket.on("join", (room) => {
     console.log("joining room", socket.id);
