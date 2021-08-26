@@ -17,9 +17,12 @@ io.on("connection", async (socket) => {
   });
 
   socket.on("code-change", (data) => {
-    console.log("room", data.room);
-    console.log("code", data.code);
     io.to(data.room).emit("recieve-code", data.code);
+  });
+
+  socket.on("leave", (room) => {
+    console.log("leaving room", socket.id);
+    socket.leave(room);
   });
 });
 
