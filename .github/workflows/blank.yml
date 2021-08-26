@@ -26,6 +26,7 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: '14'
+    - nano: run app
       run: "cd client && npm i"
       run: "npm run build"
       run: "cd ../server && npm i"
