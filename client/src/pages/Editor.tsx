@@ -25,7 +25,7 @@ function CodeEditor() {
     return () => {
       socket?.emit("leave", id);
     };
-  }, [socket]);
+  }, [socket, id]);
   const joinEditor = () => {
     socket?.emit("join", id);
     setShowEditor((prev) => !prev);
