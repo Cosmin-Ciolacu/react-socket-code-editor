@@ -21,13 +21,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: node
-      uses: actions/checkout@v2
-      uses: actions/setup-node@v2
-      with:
-        node-version: '14'
-    - name: run app
-      run: "cd client && npm i"
-      run: "npm run build"
-      run: "cd ../server && npm i"
-      run: "npm start"
+      - uses: actions/checkout@v2
+      - name: node
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+      - name: run app
+        run: |
+          cd client && npm i
+          npm run build
+          cd ../server && npm i
+          npm start
