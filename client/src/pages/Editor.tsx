@@ -15,7 +15,7 @@ function CodeEditor() {
   useEffect(() => {
     /* socketRef.current = io("http://localhost:5000");
     socketRef.current.emit("join room", id); */
-    setSocket(io("http://localhost:5000"));
+    setSocket(io("http://localhost:5000/meditation"));
   }, []);
 
   useEffect(() => {
