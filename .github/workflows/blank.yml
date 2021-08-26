@@ -26,6 +26,6 @@ jobs:
       with:
         node-version: '14'
       run: "cd client && npm i"
-      run: "npm run build",
+      run: "npm run build"
       run: "cd ../server && npm i"
       run: "npm start"
