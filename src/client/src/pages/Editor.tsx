@@ -15,11 +15,7 @@ function CodeEditor() {
   useEffect(() => {
     /* socketRef.current = io("http://localhost:5000");
     socketRef.current.emit("join room", id); */
-    setSocket(
-      io("wss://meditations.eduxxi.online/meditation", {
-        transports: ["websocket"],
-      })
-    );
+    setSocket(io("https://meditations.eduxxi.online/meditation"));
   }, []);
 
   useEffect(() => {
