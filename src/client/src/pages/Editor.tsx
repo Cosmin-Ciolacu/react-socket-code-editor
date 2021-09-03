@@ -20,6 +20,7 @@ function CodeEditor() {
 
   useEffect(() => {
     socket?.on("recieve-code", (code) => {
+      console.log("code recieved", code);
       setCode(code as string);
     });
     return () => {
@@ -44,6 +45,7 @@ function CodeEditor() {
           value={code}
           onChange={(value, ev) => {
             setCode(value as string);
+            console.log(value);
             socket?.emit("code-change", {
               room: id,
               code: value,

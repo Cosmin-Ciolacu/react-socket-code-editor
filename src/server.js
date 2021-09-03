@@ -23,6 +23,7 @@ io.of("/meditation").on("connection", async (socket) => {
   });
 
   socket.on("code-change", (data) => {
+    console.log(data);
     io.to(data.room).emit("recieve-code", data.code);
   });
 
