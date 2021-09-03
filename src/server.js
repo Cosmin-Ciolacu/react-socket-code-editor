@@ -7,6 +7,7 @@ const options = {
   cors: {
     origin: "*",
   },
+  transports: ["polling"],
 };
 const io = require("socket.io")(httpServer, options);
 const dotenv = require("dotenv");

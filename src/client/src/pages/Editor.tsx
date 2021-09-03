@@ -16,7 +16,7 @@ function CodeEditor() {
     /* socketRef.current = io("http://localhost:5000");
     socketRef.current.emit("join room", id); */
     setSocket(
-      io("ws://meditations.eduxxi.online/meditation", {
+      io("wss://meditations.eduxxi.online/meditation", {
         transports: ["websocket"],
       })
     );
