@@ -15,15 +15,15 @@ dotenv.config();
 
 const PORT = process.env.PORT || 5000;
 
-io.of("/meditation").on("connection", async (socket) => {
+io.on("connection", (socket) => {
   //
   socket.on("join", (room) => {
-    console.log("joining room", socket.id);
+    console.log(`joining room: ${room} socket id: ${socket.id}`);
     socket.join(room);
   });
 
   socket.on("code-change", (data) => {
-    console.log(data);
+    //console.log(data);
     io.to(data.room).emit("recieve-code", data.code);
   });
 
